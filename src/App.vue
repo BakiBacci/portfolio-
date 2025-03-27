@@ -1,26 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  
+  <Header v-if="this.$route.path !=='/contact'"></Header>
+  <AltHeader v-if="this.$route.path === '/contact'"></AltHeader>
+  <router-view></router-view>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+import Header from './components/Header.vue';
+import AltHeader from './components/AltHeader.vue';
+// import Contact from './views/Contact.vue';
+// import Index from './views/Index.vue';
+// import ProjetWeb from './views/ProjetWeb.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
+    Header,
+    AltHeader
+    
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+ 
 </style>
